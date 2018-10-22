@@ -12,11 +12,13 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.interfaces;
+package com.dirsha.model.coffee.coffee_by_physical_state;
+
+import com.dirsha.model.coffee.Coffee;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public interface ICoffeeStock {
+public class CoffeeBeans extends Coffee {
 }

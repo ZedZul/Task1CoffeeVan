@@ -12,13 +12,13 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model;
+package com.dirsha.model.packaging.packaging_by_type;
 
-import com.dirsha.interfaces.ICoffeeStock;
+import com.dirsha.model.packaging.Packaging;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class CoffeeStock implements ICoffeeStock {
+public class PaperPackaging extends Packaging {
 }

@@ -12,13 +12,11 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model;
-
-import com.dirsha.interfaces.INomenclature;
+package com.dirsha.model.abstract_units;
 
 /**
  @author = Vadim Dirsha
- @date = 22.10.2018
+ @date = 20.10.2018
  */
-public class Order implements INomenclature {
+public class Van implements INomenclature {
 }

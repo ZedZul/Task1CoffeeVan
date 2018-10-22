@@ -12,13 +12,11 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model;
-
-import com.dirsha.interfaces.ICoffee;
+package com.dirsha.model.coffee;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class Coffee implements ICoffee {
+public abstract class Coffee implements ICoffee {
 }

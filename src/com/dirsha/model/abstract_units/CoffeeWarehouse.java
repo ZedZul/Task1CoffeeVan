@@ -1,6 +1,4 @@
-package com.dirsha.model;
-
-import com.dirsha.interfaces.INomenclature;
+package com.dirsha.model.abstract_units;
 
 /**
  @author = Vadim Dirsha

@@ -12,11 +12,11 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.interfaces;
+package com.dirsha.model.packaging;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public interface ICoffee {
+public abstract class Packaging {
 }
