@@ -18,5 +18,26 @@ package com.dirsha.model.coffee;
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public abstract class Coffee implements ICoffee {
+public class Coffee implements ICoffee {
+    String mCoffeeName;
+    CoffeePhysicalState mCoffeePhysicalState;
+    CoffeeQuantity mCoffeeQuantity;
+    int mCoffeePrice;
+
+
+    //TODO: not implement
+    @Override
+    public int getPrice() {
+        return 0;
+    }
+
+    @Override
+    public CoffeeQuantity getCoffeeQuantity() {
+        return null;
+    }
+
+    @Override
+    public CoffeePhysicalState getCoffeePhysicalState() {
+        return null;
+    }
 }

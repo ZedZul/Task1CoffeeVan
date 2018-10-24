@@ -12,13 +12,12 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.packaging.packaging_by_type;
-
-import com.dirsha.model.packaging.Packaging;
+package com.dirsha.model.coffee;
 
 /**
  @author = Vadim Dirsha
- @date = 22.10.2018
+ @date = 24.10.2018
  */
-public class GlassPackaging extends Packaging {
+public enum CoffeePhysicalState {
+    COFFEE_BEANS, GROUND_COFFEE, INSTANT_COFFEE
 }

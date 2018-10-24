@@ -19,4 +19,8 @@ package com.dirsha.model.packaging;
  @date = 22.10.2018
  */
 public abstract class Packaging {
+    PackagingType mPackagingType;
+    int mVolume;
+    int mPrice;
+
 }

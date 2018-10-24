@@ -19,4 +19,7 @@ package com.dirsha.model.coffee;
  @date = 22.10.2018
  */
 public interface ICoffee {
+    int getPrice();
+    CoffeeQuantity getCoffeeQuantity();
+    CoffeePhysicalState getCoffeePhysicalState();
 }

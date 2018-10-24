@@ -12,13 +12,16 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.packaging.packaging_by_type;
+package com.dirsha.model.coffee.coffee_type;
 
-import com.dirsha.model.packaging.Packaging;
+import com.dirsha.model.coffee.Coffee;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class PaperPackaging extends Packaging {
+public class BlendedCoffee extends Coffee {
+    Coffee mSecondaryCoffee;
+
+    //TODO override getPrice
 }

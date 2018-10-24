@@ -14,9 +14,13 @@
  */
 package com.dirsha.model.coffee;
 
+import com.dirsha.model.packaging.IPackaging;
+
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
 public class PackagedCoffee implements IPackagedCoffee {
+    ICoffee mCoffe;
+    IPackaging mPackaging;
 }

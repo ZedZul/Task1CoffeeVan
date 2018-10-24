@@ -12,15 +12,12 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.coffee_stock;
-
-import com.dirsha.model.coffee.IPackagedCoffee;
+package com.dirsha.model.packaging;
 
 /**
  @author = Vadim Dirsha
- @date = 22.10.2018
+ @date = 24.10.2018
  */
-public class PackagedCoffeStock implements ICoffeeStock {
-    IPackagedCoffee mPackagedCoffee;
-    int mNumber;
+public enum PackagingType {
+    GLASS, PAPER
 }

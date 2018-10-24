@@ -12,7 +12,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.coffee.coffee_by_physical_state;
+package com.dirsha.model.coffee.coffee_type;
 
 import com.dirsha.model.coffee.Coffee;
 
@@ -20,5 +20,9 @@ import com.dirsha.model.coffee.Coffee;
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class InstantCoffee extends Coffee {
+public class CoffeeWithTopic extends Coffee {
+    String mTopicName;
+    int mTopicPrice;
+
+    //TODO: ovveride getPrice
 }
