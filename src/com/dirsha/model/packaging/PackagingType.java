@@ -32,7 +32,7 @@ public enum PackagingType {
     }
 
     PackagingType(int pVolumeModifier, int pPriceModifier){
-        this.mVolumeModifier = pVolumeModifier;
-        this.mPriceModifier = pPriceModifier;
+        mVolumeModifier = pVolumeModifier;
+        mPriceModifier = pPriceModifier;
     }
 }

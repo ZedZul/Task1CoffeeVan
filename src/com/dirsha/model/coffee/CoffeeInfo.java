@@ -15,10 +15,11 @@
 package com.dirsha.model.coffee;
 
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
 public class CoffeeInfo implements ICoffeeInfo {
+
     private String mName;
     private CoffeePhysicalState mPhysicalState;
     private CoffeeQuantity mQuantity;
@@ -39,5 +40,17 @@ public class CoffeeInfo implements ICoffeeInfo {
         mName = pName;
         mPhysicalState = pPhysicalState;
         mQuantity = pQuantity;
+    }
+
+    public double pricePerGr() {
+        return (double) (mPhysicalState.getMarkupPerGr() + mQuantity.getPricePerGr());
+    }
+
+    public double weightPerVolumeUnit() {
+        if (mPhysicalState == CoffeePhysicalState.COFFEE_BEANS) {
+            return 100;
+        } else {
+            return mPhysicalState == CoffeePhysicalState.INSTANT_COFFEE ? 200 : 150;
+        }
     }
 }

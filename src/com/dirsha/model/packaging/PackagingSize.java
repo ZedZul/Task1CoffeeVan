@@ -27,7 +27,7 @@ public enum PackagingSize {
     }
 
     PackagingSize(int pSize){
-        this.mSize = pSize;
+        mSize = pSize;
     }
 
 }

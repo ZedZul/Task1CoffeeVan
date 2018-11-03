@@ -18,11 +18,10 @@ package com.dirsha.utils;
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class LoadCoffee {
+public class CoffeeSorter {
 
-    public static boolean load(){
+    public static void sort(){
 
         //TODO add implementation
-        return Boolean.FALSE;
     }
 }

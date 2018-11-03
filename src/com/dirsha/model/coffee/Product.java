@@ -15,15 +15,30 @@
 package com.dirsha.model.coffee;
 
 /**
- @author = Vadim Dirsha
- @date = 03.11.2018
+ * @author = Vadim Dirsha
+ * @date = 03.11.2018
  */
 public class Product implements IProduct {
-    int mPrice;
-    String mProductName;
 
-    public Product(String pProductName, int pPrice) {
+    private String mProductName;
+    private double mPricePerGr;
+    private double mWeightPerVolumeUnit;
+
+    public String getProductName() {
+        return mProductName;
+    }
+
+    public double getPricePerGr() {
+        return mPricePerGr;
+    }
+
+    public double getWeightPerVolumeUnit() {
+        return mWeightPerVolumeUnit;
+    }
+
+    public Product(String pProductName, double pPricePerGr, double pWeightPerVolumeUnit) {
         mProductName = pProductName;
-        mPrice = pPrice;
+        mPricePerGr = pPricePerGr;
+        mWeightPerVolumeUnit = pWeightPerVolumeUnit;
     }
 }

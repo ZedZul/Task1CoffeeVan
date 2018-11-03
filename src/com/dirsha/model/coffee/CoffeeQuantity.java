@@ -19,5 +19,14 @@ package com.dirsha.model.coffee;
  @date = 24.10.2018
  */
 public enum CoffeeQuantity {
-    AA, AB, BA, BB
+    AA(4), AB(3), BA(2), BB(1);
+    private int mPricePerGr;
+
+    public int getPricePerGr() {
+        return mPricePerGr;
+    }
+
+    CoffeeQuantity(int pPricePerGr) {
+        mPricePerGr = pPricePerGr;
+    }
 }

@@ -19,5 +19,14 @@ package com.dirsha.model.coffee;
  @date = 24.10.2018
  */
 public enum CoffeePhysicalState {
-    COFFEE_BEANS, GROUND_COFFEE, INSTANT_COFFEE
+    COFFEE_BEANS(1), GROUND_COFFEE(2), INSTANT_COFFEE(3);
+    private int mMarkupPerGr;
+
+    public int getMarkupPerGr() {
+        return mMarkupPerGr;
+    }
+
+    CoffeePhysicalState(int pMarkupPerGr) {
+        mMarkupPerGr = pMarkupPerGr;
+    }
 }

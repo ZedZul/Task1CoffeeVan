@@ -22,9 +22,10 @@ public class Packaging implements IPackaging {
 
     private PackagingType mType;
     private PackagingSize mSize;
+    private int mVolume;
 
     public int getVolume() {
-        return mType.getVolumeModifier() + mSize.getSize();
+        return mVolume;
     }
 
     public int getPrice() {
@@ -32,7 +33,8 @@ public class Packaging implements IPackaging {
     }
 
     public Packaging(PackagingType pType, PackagingSize pSize) {
-        this.mType = pType;
-        this.mSize = pSize;
+        mType = pType;
+        mSize = pSize;
+        mVolume = mType.getVolumeModifier() + mSize.getSize();
     }
 }

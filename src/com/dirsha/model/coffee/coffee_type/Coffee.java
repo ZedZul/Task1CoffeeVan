@@ -25,8 +25,13 @@ public class Coffee extends Product {
 
     CoffeeInfo mCoffeeInfo;
 
-    public Coffee(String pProductName, int pPrice, CoffeeInfo pCoffeeInfo) {
-        super(pProductName, pPrice);
+    public Coffee(String pProductName, CoffeeInfo pCoffeeInfo) {
+        super(pProductName, pCoffeeInfo.pricePerGr(), pCoffeeInfo.weightPerVolumeUnit());
+        this.mCoffeeInfo = pCoffeeInfo;
+    }
+
+    public Coffee(String pProductName, double pPricePerGr, double pWeightPerVolumeUnit, CoffeeInfo pCoffeeInfo) {
+        super(pProductName, pPricePerGr, pWeightPerVolumeUnit);
         this.mCoffeeInfo = pCoffeeInfo;
     }
 }

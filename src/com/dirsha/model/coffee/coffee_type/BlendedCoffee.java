@@ -21,14 +21,16 @@ import com.dirsha.model.coffee.Product;
  * @author = Vadim Dirsha
  * @date = 22.10.2018
  */
-public class BlendedCoffee extends Product {
+public class BlendedCoffee extends Coffee {
 
-    CoffeeInfo mFirstCoffeeInfo;
     CoffeeInfo mSecondaryCoffeeInfo;
 
-    public BlendedCoffee(String pProductName, int pPrice, CoffeeInfo pFirstCoffeeInfo, CoffeeInfo pSecondaryCoffeeInfo) {
-        super(pProductName, pPrice);
-        this.mFirstCoffeeInfo = pFirstCoffeeInfo;
+    public BlendedCoffee(String pProductName, CoffeeInfo pFirstCoffeeInfo, CoffeeInfo pSecondaryCoffeeInfo) {
+        super(pProductName,
+                (pFirstCoffeeInfo.pricePerGr() + pSecondaryCoffeeInfo.pricePerGr()) / 2.0,
+                (pFirstCoffeeInfo.weightPerVolumeUnit() + pSecondaryCoffeeInfo.weightPerVolumeUnit()) / 2.0,
+                pFirstCoffeeInfo);
         this.mSecondaryCoffeeInfo = pSecondaryCoffeeInfo;
     }
+
 }
