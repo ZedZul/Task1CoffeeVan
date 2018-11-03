@@ -21,6 +21,6 @@ import com.dirsha.model.packaging.IPackaging;
  @date = 22.10.2018
  */
 public class PackagedCoffee implements IPackagedCoffee {
-    ICoffee mCoffe;
-    IPackaging mPackaging;
+    private Product mCoffe;
+    private IPackaging mPackaging;
 }

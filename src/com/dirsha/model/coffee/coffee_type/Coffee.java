@@ -12,22 +12,15 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.packaging;
+package com.dirsha.model.coffee.coffee_type;
+
+import com.dirsha.model.coffee.CoffeeInfo;
+import com.dirsha.model.coffee.Product;
 
 /**
  @author = Vadim Dirsha
- @date = 24.10.2018
+ @date = 03.11.2018
  */
-public enum PackagingSize {
-    LARGE(3), MEDIUM(2), SMALL(1);
-    private int mSize;
-
-    public int getSize() {
-        return mSize;
-    }
-
-    PackagingSize(int mSize){
-        this.mSize = mSize;
-    }
-
+public class Coffee extends Product {
+    CoffeeInfo mCoffeeInfo;
 }

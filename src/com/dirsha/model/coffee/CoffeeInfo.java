@@ -18,8 +18,9 @@ package com.dirsha.model.coffee;
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public interface ICoffee {
-    int getPrice();
-    CoffeeQuantity getCoffeeQuantity();
-    CoffeePhysicalState getCoffeePhysicalState();
+public class CoffeeInfo implements ICoffeeInfo {
+    private String mName;
+    private CoffeePhysicalState mPhysicalState;
+    private CoffeeQuantity mQuantity;
+
 }

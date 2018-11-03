@@ -19,5 +19,14 @@ package com.dirsha.model.packaging;
  @date = 24.10.2018
  */
 public enum PackagingType {
-    GLASS, PAPER
+    GLASS(1), PAPER(0);
+    private int mModifier;
+
+    public int getModifier() {
+        return mModifier;
+    }
+
+    PackagingType(int mModify){
+        this.mModifier = mModify;
+    }
 }

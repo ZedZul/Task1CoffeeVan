@@ -12,32 +12,11 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.coffee;
+package com.dirsha.model.order;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class Coffee implements ICoffee {
-    String mCoffeeName;
-    CoffeePhysicalState mCoffeePhysicalState;
-    CoffeeQuantity mCoffeeQuantity;
-    int mCoffeePrice;
-
-
-    //TODO: not implement
-    @Override
-    public int getPrice() {
-        return 0;
-    }
-
-    @Override
-    public CoffeeQuantity getCoffeeQuantity() {
-        return null;
-    }
-
-    @Override
-    public CoffeePhysicalState getCoffeePhysicalState() {
-        return null;
-    }
+public interface INomenclature {
 }

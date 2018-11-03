@@ -12,11 +12,14 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.abstract_units;
+package com.dirsha.model.coffee;
 
 /**
  @author = Vadim Dirsha
- @date = 20.10.2018
+ @date = 03.11.2018
  */
-public class Van implements INomenclature {
+public abstract class Product {
+    int mPrice;
+
+
 }

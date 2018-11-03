@@ -14,15 +14,14 @@
  */
 package com.dirsha.model.coffee.coffee_type;
 
-import com.dirsha.model.coffee.Coffee;
+import com.dirsha.model.coffee.CoffeeInfo;
+import com.dirsha.model.coffee.Product;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class CoffeeWithTopic extends Coffee {
+public class CoffeeWithTopic extends Product {
+    CoffeeInfo mCoffeeInfo;
     String mTopicName;
-    int mTopicPrice;
-
-    //TODO: ovveride getPrice
 }

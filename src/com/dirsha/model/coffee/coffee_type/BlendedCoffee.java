@@ -14,14 +14,15 @@
  */
 package com.dirsha.model.coffee.coffee_type;
 
-import com.dirsha.model.coffee.Coffee;
+import com.dirsha.model.coffee.CoffeeInfo;
+import com.dirsha.model.coffee.Product;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class BlendedCoffee extends Coffee {
-    Coffee mSecondaryCoffee;
+public class BlendedCoffee extends Product {
+    CoffeeInfo mFirstCoffeeInfo;
+    CoffeeInfo mSecondaryCoffeeInfo;
 
-    //TODO override getPrice
 }

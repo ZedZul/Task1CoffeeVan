@@ -12,11 +12,15 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.abstract_units;
+package com.dirsha.model.order;
+
+import com.dirsha.model.coffee_stock.ICoffeeStock;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public interface INomenclature {
+public class Order implements INomenclature {
+    ICoffeeStock[] mOrderUnits;
+
 }
