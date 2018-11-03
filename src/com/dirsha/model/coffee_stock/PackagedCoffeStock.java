@@ -23,4 +23,9 @@ import com.dirsha.model.coffee.IPackagedCoffee;
 public class PackagedCoffeStock implements ICoffeeStock {
     IPackagedCoffee mPackagedCoffee;
     int mNumber;
+
+    public PackagedCoffeStock(IPackagedCoffee pPackagedCoffee, int pNumber) {
+        mPackagedCoffee = pPackagedCoffee;
+        mNumber = pNumber;
+    }
 }

@@ -23,4 +23,9 @@ import com.dirsha.model.packaging.IPackaging;
 public class PackagedCoffee implements IPackagedCoffee {
     private Product mCoffe;
     private IPackaging mPackaging;
+
+    public PackagedCoffee(Product pCoffe, IPackaging pPackaging) {
+        mCoffe = pCoffe;
+        mPackaging = pPackaging;
+    }
 }

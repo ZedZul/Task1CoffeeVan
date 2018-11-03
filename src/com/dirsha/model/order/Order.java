@@ -23,4 +23,7 @@ import com.dirsha.model.coffee_stock.ICoffeeStock;
 public class Order implements INomenclature {
     ICoffeeStock[] mOrderUnits;
 
+    public Order(ICoffeeStock[] pOrderUnits) {
+        mOrderUnits = pOrderUnits;
+    }
 }

@@ -23,4 +23,21 @@ public class CoffeeInfo implements ICoffeeInfo {
     private CoffeePhysicalState mPhysicalState;
     private CoffeeQuantity mQuantity;
 
+    public String getName() {
+        return mName;
+    }
+
+    public CoffeePhysicalState getPhysicalState() {
+        return mPhysicalState;
+    }
+
+    public CoffeeQuantity getQuantity() {
+        return mQuantity;
+    }
+
+    public CoffeeInfo(String pName, CoffeePhysicalState pPhysicalState, CoffeeQuantity pQuantity) {
+        mName = pName;
+        mPhysicalState = pPhysicalState;
+        mQuantity = pQuantity;
+    }
 }

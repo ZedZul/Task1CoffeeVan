@@ -14,9 +14,18 @@
  */
 package com.dirsha.utils;
 
+import com.dirsha.model.coffee.IProduct;
+import com.dirsha.model.coffee.Product;
+
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
 public class FinderCoffee {
+
+    public static IProduct[] find(){
+
+        //TODO add implementation
+        return new Product[0];
+    }
 }

@@ -12,27 +12,17 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.model.packaging;
+package com.dirsha.utils;
 
 /**
  @author = Vadim Dirsha
- @date = 24.10.2018
+ @date = 22.10.2018
  */
-public enum PackagingType {
-    GLASS(1,2), PAPER(0,1);
-    private int mVolumeModifier;
-    private int mPriceModifier;
+public class LoadCoffee {
 
-    public int getPriceModifier() {
-        return mPriceModifier;
-    }
+    public static boolean load(){
 
-    public int getVolumeModifier() {
-        return mVolumeModifier;
-    }
-
-    PackagingType(int pVolumeModifier, int pPriceModifier){
-        this.mVolumeModifier = pVolumeModifier;
-        this.mPriceModifier = pPriceModifier;
+        //TODO add implementation
+        return Boolean.FALSE;
     }
 }

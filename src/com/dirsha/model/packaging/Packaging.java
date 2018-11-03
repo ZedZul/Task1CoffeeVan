@@ -15,20 +15,24 @@
 package com.dirsha.model.packaging;
 
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
-public abstract class Packaging {
+public class Packaging implements IPackaging {
+
     private PackagingType mType;
     private PackagingSize mSize;
 
-    public int getVolume(){
-        return mType.getModifier() + mSize.getSize();
+    public int getVolume() {
+        return mType.getVolumeModifier() + mSize.getSize();
     }
 
-    int mPrice;
-
     public int getPrice() {
-        return mPrice;
+        return this.getVolume() + mType.getPriceModifier() * 2;
+    }
+
+    public Packaging(PackagingType pType, PackagingSize pSize) {
+        this.mType = pType;
+        this.mSize = pSize;
     }
 }

@@ -18,8 +18,12 @@ package com.dirsha.model.coffee;
  @author = Vadim Dirsha
  @date = 03.11.2018
  */
-public abstract class Product {
+public class Product implements IProduct {
     int mPrice;
+    String mProductName;
 
-
+    public Product(String pProductName, int pPrice) {
+        mProductName = pProductName;
+        mPrice = pPrice;
+    }
 }

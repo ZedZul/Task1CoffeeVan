@@ -26,8 +26,8 @@ public enum PackagingSize {
         return mSize;
     }
 
-    PackagingSize(int mSize){
-        this.mSize = mSize;
+    PackagingSize(int pSize){
+        this.mSize = pSize;
     }
 
 }

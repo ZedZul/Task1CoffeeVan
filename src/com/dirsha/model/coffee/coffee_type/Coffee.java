@@ -18,9 +18,15 @@ import com.dirsha.model.coffee.CoffeeInfo;
 import com.dirsha.model.coffee.Product;
 
 /**
- @author = Vadim Dirsha
- @date = 03.11.2018
+ * @author = Vadim Dirsha
+ * @date = 03.11.2018
  */
 public class Coffee extends Product {
+
     CoffeeInfo mCoffeeInfo;
+
+    public Coffee(String pProductName, int pPrice, CoffeeInfo pCoffeeInfo) {
+        super(pProductName, pPrice);
+        this.mCoffeeInfo = pCoffeeInfo;
+    }
 }

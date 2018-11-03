@@ -19,4 +19,9 @@ package com.dirsha.utils;
  @date = 22.10.2018
  */
 public class SortCoffee {
+
+    public static void sort(){
+
+        //TODO add implementation
+    }
 }

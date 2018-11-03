@@ -14,10 +14,34 @@
  */
 package com.dirsha.model.van;
 
+import com.dirsha.model.coffee_stock.ICoffeeStock;
+
 /**
- @author = Vadim Dirsha
- @date = 20.10.2018
+ * @author = Vadim Dirsha
+ * @date = 20.10.2018
  */
 public class Van {
-    int UsefullVolume;
+
+    private int mUsefulVolume;
+    private ICoffeeStock mCargo;
+
+    public int getUsefulVolume() {
+        return mUsefulVolume;
+    }
+
+    public void setUsefulVolume(int pUsefulVolume) {
+        mUsefulVolume = pUsefulVolume;
+    }
+
+    public ICoffeeStock getCargo() {
+        return mCargo;
+    }
+
+    public void setCargo(ICoffeeStock pCargo) {
+        mCargo = pCargo;
+    }
+
+    public Van(int pUsefulVolume) {
+        mUsefulVolume = pUsefulVolume;
+    }
 }
