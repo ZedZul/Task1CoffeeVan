@@ -33,4 +33,9 @@ public class CoffeeWithTopic extends Coffee {
         this.mCoffeeInfo = pCoffeeInfo;
         this.mTopicName = pTopicName;
     }
+
+    @Override
+    public String toString() {
+        return String.join(" ", super.toString(), mTopicName);
+    }
 }

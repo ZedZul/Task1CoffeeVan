@@ -16,6 +16,8 @@ package com.dirsha.model.van;
 
 import com.dirsha.model.coffee_stock.ICoffeeStock;
 
+import java.util.ArrayList;
+
 /**
  * @author = Vadim Dirsha
  * @date = 20.10.2018
@@ -23,7 +25,7 @@ import com.dirsha.model.coffee_stock.ICoffeeStock;
 public class Van {
 
     private int mUsefulVolume;
-    private ICoffeeStock mCargo;
+    private ArrayList<ICoffeeStock> mCargo;
 
     public int getUsefulVolume() {
         return mUsefulVolume;
@@ -31,14 +33,6 @@ public class Van {
 
     public void setUsefulVolume(int pUsefulVolume) {
         mUsefulVolume = pUsefulVolume;
-    }
-
-    public ICoffeeStock getCargo() {
-        return mCargo;
-    }
-
-    public void setCargo(ICoffeeStock pCargo) {
-        mCargo = pCargo;
     }
 
     public Van(int pUsefulVolume) {

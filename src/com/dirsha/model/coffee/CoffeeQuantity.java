@@ -15,8 +15,8 @@
 package com.dirsha.model.coffee;
 
 /**
- @author = Vadim Dirsha
- @date = 24.10.2018
+ * @author = Vadim Dirsha
+ * @date = 24.10.2018
  */
 public enum CoffeeQuantity {
     AA(4), AB(3), BA(2), BB(1);

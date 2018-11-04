@@ -24,6 +24,14 @@ public class Packaging implements IPackaging {
     private PackagingSize mSize;
     private int mVolume;
 
+    public PackagingType getType() {
+        return mType;
+    }
+
+    public PackagingSize getSize() {
+        return mSize;
+    }
+
     public int getVolume() {
         return mVolume;
     }
@@ -35,6 +43,11 @@ public class Packaging implements IPackaging {
     public Packaging(PackagingType pType, PackagingSize pSize) {
         mType = pType;
         mSize = pSize;
-        mVolume = mType.getVolumeModifier() + mSize.getSize();
+        mVolume = mType.getVolumeModifier() + mSize.getSizeValue();
+    }
+
+    @Override
+    public String toString(){
+        return String.join(" ",mType.name(), mSize.name());
     }
 }

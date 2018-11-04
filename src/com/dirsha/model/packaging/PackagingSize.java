@@ -22,7 +22,7 @@ public enum PackagingSize {
     LARGE(3), MEDIUM(2), SMALL(1);
     private int mSize;
 
-    public int getSize() {
+    public int getSizeValue() {
         return mSize;
     }
 

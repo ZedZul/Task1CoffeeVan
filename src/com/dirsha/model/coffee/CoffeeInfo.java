@@ -53,4 +53,9 @@ public class CoffeeInfo implements ICoffeeInfo {
             return mPhysicalState == CoffeePhysicalState.INSTANT_COFFEE ? 200 : 150;
         }
     }
+
+    @Override
+    public String toString() {
+        return String.join(" ", mName, mPhysicalState.name(), mQuantity.name());
+    }
 }

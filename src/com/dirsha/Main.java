@@ -3,13 +3,30 @@ package com.dirsha;
 import com.dirsha.model.coffee.CoffeeInfo;
 import com.dirsha.model.coffee.CoffeePhysicalState;
 import com.dirsha.model.coffee.CoffeeQuantity;
+import com.dirsha.model.coffee.PackagedCoffee;
 import com.dirsha.model.coffee.coffee_type.BlendedCoffee;
 import com.dirsha.model.coffee.coffee_type.Coffee;
 import com.dirsha.model.coffee.coffee_type.CoffeeWithTopic;
+import com.dirsha.model.packaging.Packaging;
+import com.dirsha.model.packaging.PackagingSize;
+import com.dirsha.model.packaging.PackagingType;
+
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.ArrayList;
 
 public class Main {
 
+    private static ArrayList<PackagedCoffee> mPackagedCoffeeArrayList = new ArrayList<>();
     public static void main(String[] args) {
+        mPackagedCoffeeArrayList = createPackagedCoffees();
+        for(PackagedCoffee packagedCoffee: mPackagedCoffeeArrayList) {
+            System.out.println(packagedCoffee.toString());
+        }
+    }
+
+    private static ArrayList<PackagedCoffee> createPackagedCoffees(){
+        ArrayList<PackagedCoffee> packagedCoffees = new ArrayList<>();
+
         CoffeeInfo coffee1 = new CoffeeInfo(NameConst.ARABICA, CoffeePhysicalState.COFFEE_BEANS, CoffeeQuantity.AA);
         CoffeeInfo coffee2 = new CoffeeInfo(NameConst.LIBERICA, CoffeePhysicalState.GROUND_COFFEE, CoffeeQuantity.AB);
         CoffeeInfo coffee3 = new CoffeeInfo(NameConst.ROBUSTA, CoffeePhysicalState.INSTANT_COFFEE, CoffeeQuantity.BB);
@@ -33,5 +50,32 @@ public class Main {
         CoffeeWithTopic product7 = new CoffeeWithTopic(NameConst.NESCAFE_GOLD, coffee3, NameConst.MILK, 3, 150.0);
         CoffeeWithTopic product8 = new CoffeeWithTopic(NameConst.JACOBS_GOLD, coffee5, NameConst.SUGAR, 2, 200.0);
         CoffeeWithTopic product9 = new CoffeeWithTopic(NameConst.TCHIBO_GOLD, coffee7, NameConst.MILK_AND_SUGAR, 2.5, 175.0);
+
+        ArrayList<Coffee> coffees = new ArrayList<>();
+        coffees.add(product1);
+        coffees.add(product2);
+        coffees.add(product3);
+        coffees.add(product4);
+        coffees.add(product5);
+        coffees.add(product6);
+        coffees.add(product7);
+        coffees.add(product8);
+        coffees.add(product9);
+
+        ArrayList<Packaging> packagings= new ArrayList<>();
+        for(PackagingSize size: PackagingSize.values()){
+            for(PackagingType type: PackagingType.values()){
+                packagings.add(new Packaging(type,size));
+            }
+        }
+
+        for(Coffee coffee: coffees){
+            for(Packaging packaging: packagings){
+                packagedCoffees.add(new PackagedCoffee(coffee, packaging));
+            }
+        }
+        return packagedCoffees;
     }
+
+
 }

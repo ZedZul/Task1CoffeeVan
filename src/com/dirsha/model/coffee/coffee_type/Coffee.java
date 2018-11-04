@@ -34,4 +34,9 @@ public class Coffee extends Product {
         super(pProductName, pPricePerGr, pWeightPerVolumeUnit);
         this.mCoffeeInfo = pCoffeeInfo;
     }
+
+    @Override
+    public String toString() {
+        return String.join(" ", this.getProductName(), mCoffeeInfo.toString());
+    }
 }

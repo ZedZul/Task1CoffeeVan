@@ -33,4 +33,8 @@ public class BlendedCoffee extends Coffee {
         this.mSecondaryCoffeeInfo = pSecondaryCoffeeInfo;
     }
 
+    @Override
+    public String toString(){
+        return String.join(" ", super.toString(), mSecondaryCoffeeInfo.toString());
+    }
 }

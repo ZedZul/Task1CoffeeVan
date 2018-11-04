@@ -14,19 +14,44 @@
  */
 package com.dirsha.model.coffee;
 
-import com.dirsha.model.packaging.IPackaging;
+import com.dirsha.model.packaging.Packaging;
 
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
 public class PackagedCoffee implements IPackagedCoffee {
-    private Product mCoffe;
-    private IPackaging mPackaging;
-    private double mWeight;
 
-    public PackagedCoffee(Product pCoffe, IPackaging pPackaging) {
-        mCoffe = pCoffe;
+    private Product mCoffee;
+    private Packaging mPackaging;
+    private double mProductWeight;
+    private double mPrice;
+
+    public Product getCoffee() {
+        return mCoffee;
+    }
+
+    public Packaging getPackaging() {
+        return mPackaging;
+    }
+
+    public double getProductWeight() {
+        return mProductWeight;
+    }
+
+    public double getPrice() {
+        return mPrice;
+    }
+
+    public PackagedCoffee(Product pCoffee, Packaging pPackaging) {
+        mCoffee = pCoffee;
         mPackaging = pPackaging;
+        mProductWeight = pPackaging.getSize().getSizeValue() * pCoffee.getWeightPerVolumeUnit();
+        mPrice = pCoffee.getPricePerGr() * mProductWeight + pPackaging.getType().getPriceModifier() * 100;
+    }
+
+    @Override
+    public String toString() {
+        return String.join(" ", mCoffee.toString(), mPackaging.toString());
     }
 }
