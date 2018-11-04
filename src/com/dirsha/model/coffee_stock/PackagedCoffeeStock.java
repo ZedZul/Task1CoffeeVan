@@ -15,16 +15,29 @@
 package com.dirsha.model.coffee_stock;
 
 import com.dirsha.model.coffee.IPackagedCoffee;
+import com.dirsha.model.coffee.PackagedCoffee;
 
 /**
  @author = Vadim Dirsha
  @date = 22.10.2018
  */
-public class PackagedCoffeStock implements ICoffeeStock {
-    IPackagedCoffee mPackagedCoffee;
+public class PackagedCoffeeStock implements ICoffeeStock {
+    PackagedCoffee mPackagedCoffee;
     int mNumber;
 
-    public PackagedCoffeStock(IPackagedCoffee pPackagedCoffee, int pNumber) {
+    public PackagedCoffee getPackagedCoffee() {
+        return mPackagedCoffee;
+    }
+
+    public int getNumber() {
+        return mNumber;
+    }
+
+    public void setNumber(int mNumber) {
+        this.mNumber = mNumber;
+    }
+
+    public PackagedCoffeeStock(PackagedCoffee pPackagedCoffee, int pNumber) {
         mPackagedCoffee = pPackagedCoffee;
         mNumber = pNumber;
     }

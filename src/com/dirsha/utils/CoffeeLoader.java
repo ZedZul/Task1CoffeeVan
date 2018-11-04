@@ -14,15 +14,33 @@
  */
 package com.dirsha.utils;
 
+import com.dirsha.model.coffee.PackagedCoffee;
+import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
+import com.dirsha.model.van.Van;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
+
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
 public class CoffeeLoader {
 
-    public static boolean load(){
-
-        //TODO add implementation
+    public static boolean load(Van pVan, double pOrderCoast, int pVanVolume, ArrayList<PackagedCoffee> pPackagedCoffeeArrayList) {
+        ArrayList<PackagedCoffeeStock> packagedCoffeeStockArrayList = new ArrayList<>();
+        int sizePackagedCoffee = pPackagedCoffeeArrayList.size();
+        int tempVolume = 0;
+        double tempCoast = 0.0;
+        Random random = new Random(new Date().getTime());
+        while (tempVolume < pVanVolume && tempCoast < pOrderCoast) {
+            packagedCoffeeStockArrayList.add(new PackagedCoffeeStock(pPackagedCoffeeArrayList.get(random.nextInt(sizePackagedCoffee)),
+                    1));
+            tempVolume += packagedCoffeeStockArrayList.get(packagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPackaging().getVolume();
+            tempCoast += packagedCoffeeStockArrayList.get(packagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPrice();
+        }
+        //TODO update implementation
         return Boolean.FALSE;
     }
 }

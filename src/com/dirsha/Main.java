@@ -17,6 +17,8 @@ import java.util.ArrayList;
 public class Main {
 
     private static ArrayList<PackagedCoffee> mPackagedCoffeeArrayList = new ArrayList<>();
+    private static int mVanVolume = 1000;
+    private static double mOrderCoast = 50000;
     public static void main(String[] args) {
         mPackagedCoffeeArrayList = createPackagedCoffees();
         for(PackagedCoffee packagedCoffee: mPackagedCoffeeArrayList) {

@@ -15,7 +15,14 @@
 package com.dirsha.utils;
 
 import com.dirsha.model.coffee.IProduct;
+import com.dirsha.model.coffee.PackagedCoffee;
 import com.dirsha.model.coffee.Product;
+import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  @author = Vadim Dirsha
@@ -23,9 +30,12 @@ import com.dirsha.model.coffee.Product;
  */
 public class CoffeeFinder {
 
-    public static IProduct[] find(){
+    public static HashSet<PackagedCoffee> find(ArrayList<PackagedCoffeeStock> pPackagedCoffeeStockArrayList, String ... searchOption){
+        HashSet<PackagedCoffee> foundCoffeeHashSet;
 
-        //TODO add implementation
-        return new Product[0];
+        for(PackagedCoffeeStock packagedCoffeeStock: pPackagedCoffeeStockArrayList){
+
+        }
+        return new ArrayList<>();
     }
 }
