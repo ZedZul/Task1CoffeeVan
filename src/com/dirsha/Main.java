@@ -17,11 +17,15 @@ import java.util.ArrayList;
 public class Main {
 
     private static ArrayList<PackagedCoffee> mPackagedCoffeeArrayList = new ArrayList<>();
+    private static int mVanVolume = 500;
+    private static double mOrderCost = 10000;
     public static void main(String[] args) {
         mPackagedCoffeeArrayList = createPackagedCoffees();
         for(PackagedCoffee packagedCoffee: mPackagedCoffeeArrayList) {
             System.out.println(packagedCoffee.toString());
         }
+
+
     }
 
     private static ArrayList<PackagedCoffee> createPackagedCoffees(){

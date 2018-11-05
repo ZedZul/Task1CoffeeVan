@@ -52,6 +52,6 @@ public class PackagedCoffee implements IPackagedCoffee {
 
     @Override
     public String toString() {
-        return String.join(" ", mCoffee.toString(), mPackaging.toString());
+        return String.join(" ", mCoffee.toString(), mPackaging.toString(), String.valueOf(mPrice), String.valueOf(mPackaging.getVolume()));
     }
 }
