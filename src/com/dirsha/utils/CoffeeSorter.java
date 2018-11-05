@@ -14,14 +14,25 @@
  */
 package com.dirsha.utils;
 
+import com.dirsha.model.coffee.PackagedCoffee;
+import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
+import javafx.beans.property.Property;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
 public class CoffeeSorter {
 
-    public static void sort(){
+    public static void sort(ArrayList<PackagedCoffeeStock> packagedCoffeeStockArrayList) {
+        packagedCoffeeStockArrayList.sort((s1, s2) -> {
+            Double t1 = s1.getPackagedCoffee().getPrice() / s1.getPackagedCoffee().getProductWeight();
+            Double t2 = s2.getPackagedCoffee().getPrice() / s2.getPackagedCoffee().getProductWeight();
+            return t1.compareTo(t2);
+        });
 
-        //TODO add implementation
     }
 }

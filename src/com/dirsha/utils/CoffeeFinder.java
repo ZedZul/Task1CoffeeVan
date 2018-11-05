@@ -14,18 +14,59 @@
  */
 package com.dirsha.utils;
 
-import com.dirsha.model.coffee.IProduct;
-import com.dirsha.model.coffee.Product;
+import com.dirsha.model.coffee.CoffeePhysicalState;
+import com.dirsha.model.coffee.CoffeeQuantity;
+import com.dirsha.model.coffee.PackagedCoffee;
+import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
 public class CoffeeFinder {
 
-    public static IProduct[] find(){
+    public static HashSet<PackagedCoffee> find(ArrayList<PackagedCoffeeStock> pPackagedCoffeeStockArrayList, HashMap<String, String> searchOption) {
+        HashSet<PackagedCoffee> foundCoffeeSet = new HashSet<>();
+        Set<PackagedCoffee> tempCoffeePriceSearchOptionSet = new HashSet<>();
+        if (searchOption.containsKey(SearchOptionsConst.PRICE)) {
+            tempCoffeePriceSearchOptionSet = pPackagedCoffeeStockArrayList.stream()
+                    .filter(unit -> Double.parseDouble(searchOption.get(SearchOptionsConst.PRICE)) < unit.getPackagedCoffee().getPrice())
+                    .map(unit -> unit.getPackagedCoffee())
+                    .collect(Collectors.toSet());
+        }
+        Set<PackagedCoffee> tempCoffeeQuantitySearchOptionSet = new HashSet<>();
+        if (searchOption.containsKey(SearchOptionsConst.COFFEE_QUANTITY)) {
+            tempCoffeePriceSearchOptionSet = pPackagedCoffeeStockArrayList.stream()
+                    .filter(unit -> CoffeeQuantity.valueOf(searchOption.get(SearchOptionsConst.COFFEE_QUANTITY)) == unit.getPackagedCoffee().getCoffee().getCoffeeInfo().getQuantity())
+                    .map(unit -> unit.getPackagedCoffee())
+                    .collect(Collectors.toSet());
+        }
 
-        //TODO add implementation
-        return new Product[0];
+        Set<PackagedCoffee> tempCoffeePhysicalStateSearchOptionSet = new HashSet<>();
+        if (searchOption.containsKey(SearchOptionsConst.COFFE_PHYSICAL_STATE)) {
+            tempCoffeePriceSearchOptionSet = pPackagedCoffeeStockArrayList.stream()
+                    .filter(unit -> CoffeePhysicalState.valueOf(searchOption.get(SearchOptionsConst.COFFE_PHYSICAL_STATE)) == unit.getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
+                    .map(unit -> unit.getPackagedCoffee())
+                    .collect(Collectors.toSet());
+        }
+
+        foundCoffeeSet.addAll(tempCoffeePhysicalStateSearchOptionSet);
+        foundCoffeeSet.addAll(tempCoffeePriceSearchOptionSet);
+        foundCoffeeSet.addAll(tempCoffeeQuantitySearchOptionSet);
+
+        if (searchOption.containsKey(SearchOptionsConst.PRICE)){
+            foundCoffeeSet.retainAll(tempCoffeePriceSearchOptionSet);
+        }
+        if (searchOption.containsKey(SearchOptionsConst.COFFE_PHYSICAL_STATE)){
+            foundCoffeeSet.retainAll(tempCoffeePhysicalStateSearchOptionSet);
+        }
+        if (searchOption.containsKey(SearchOptionsConst.COFFEE_QUANTITY)){
+            foundCoffeeSet.retainAll(tempCoffeeQuantitySearchOptionSet);
+        }
+
+        return foundCoffeeSet;
     }
 }

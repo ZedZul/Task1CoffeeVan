@@ -30,8 +30,8 @@ public class CoffeeWithTopic extends Coffee {
                 (pCoffeeInfo.pricePerGr() + pTopicPricePerGr) / 2.0,
                 pCoffeeInfo.weightPerVolumeUnit() * 0.9 + pTopicPricePerGr * 0.1,
                 pCoffeeInfo);
-        this.mCoffeeInfo = pCoffeeInfo;
-        this.mTopicName = pTopicName;
+        mCoffeeInfo = pCoffeeInfo;
+        mTopicName = pTopicName;
     }
 
     @Override

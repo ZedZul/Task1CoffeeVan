@@ -23,7 +23,11 @@ import com.dirsha.model.coffee.Product;
  */
 public class Coffee extends Product {
 
-    CoffeeInfo mCoffeeInfo;
+    public CoffeeInfo mCoffeeInfo;
+
+    public CoffeeInfo getCoffeeInfo() {
+        return mCoffeeInfo;
+    }
 
     public Coffee(String pProductName, CoffeeInfo pCoffeeInfo) {
         super(pProductName, pCoffeeInfo.pricePerGr(), pCoffeeInfo.weightPerVolumeUnit());

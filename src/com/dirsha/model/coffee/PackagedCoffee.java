@@ -14,6 +14,7 @@
  */
 package com.dirsha.model.coffee;
 
+import com.dirsha.model.coffee.coffee_type.Coffee;
 import com.dirsha.model.packaging.Packaging;
 
 /**
@@ -22,12 +23,12 @@ import com.dirsha.model.packaging.Packaging;
  */
 public class PackagedCoffee implements IPackagedCoffee {
 
-    private Product mCoffee;
+    private Coffee mCoffee;
     private Packaging mPackaging;
     private double mProductWeight;
     private double mPrice;
 
-    public Product getCoffee() {
+    public Coffee getCoffee() {
         return mCoffee;
     }
 
@@ -43,7 +44,7 @@ public class PackagedCoffee implements IPackagedCoffee {
         return mPrice;
     }
 
-    public PackagedCoffee(Product pCoffee, Packaging pPackaging) {
+    public PackagedCoffee(Coffee pCoffee, Packaging pPackaging) {
         mCoffee = pCoffee;
         mPackaging = pPackaging;
         mProductWeight = pPackaging.getSize().getSizeValue() * pCoffee.getWeightPerVolumeUnit();
