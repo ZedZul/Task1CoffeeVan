@@ -1,8 +1,9 @@
-package com.dirsha.utils;
+package com.dirsha.tests;
 
-import com.dirsha.PrepareData;
 import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
 import com.dirsha.model.van.Van;
+import com.dirsha.utils.CoffeeLoader;
+import com.dirsha.utils.PrepareData;
 
 import org.junit.Test;
 

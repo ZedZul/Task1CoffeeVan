@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static com.dirsha.PrepareData.createPackagedCoffees;
+import static com.dirsha.utils.PrepareData.createPackagedCoffees;
 
 public class Main {
 

@@ -15,6 +15,9 @@
 package com.dirsha.model.coffee.coffee_stock;
 
 import com.dirsha.model.coffee.PackagedCoffee;
+import com.dirsha.utils.LogMessageConst;
+
+import java.util.logging.Logger;
 
 /**
  * @author = Vadim Dirsha
@@ -22,12 +25,18 @@ import com.dirsha.model.coffee.PackagedCoffee;
  */
 public class PackagedCoffeeStock implements IPackagedCoffeeStock {
 
-    int mNumber;
+    private static Logger log = Logger.getLogger(PackagedCoffee.class.getName());
+    private int mNumber;
     private PackagedCoffee mPackagedCoffee;
 
     public PackagedCoffeeStock(PackagedCoffee pPackagedCoffee, int pNumber) {
         mPackagedCoffee = pPackagedCoffee;
         mNumber = pNumber;
+        log.fine(LogMessageConst.OBJ_CREATE);
+    }
+
+    public static Logger getLog() {
+        return log;
     }
 
     public PackagedCoffee getPackagedCoffee() {

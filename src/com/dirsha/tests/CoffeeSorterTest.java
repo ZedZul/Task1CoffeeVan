@@ -1,7 +1,8 @@
-package com.dirsha.utils;
+package com.dirsha.tests;
 
 import com.dirsha.model.coffee.PackagedCoffee;
 import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
+import com.dirsha.utils.CoffeeSorter;
 
 import org.junit.BeforeClass;
 import org.junit.Test;

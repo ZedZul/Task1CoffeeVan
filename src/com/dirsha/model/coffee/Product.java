@@ -14,15 +14,30 @@
  */
 package com.dirsha.model.coffee;
 
+import com.dirsha.utils.LogMessageConst;
+
+import java.util.logging.Logger;
+
 /**
  * @author = Vadim Dirsha
  * @date = 03.11.2018
  */
 public class Product implements IProduct {
 
+    private static Logger log = Logger.getLogger(PackagedCoffee.class.getName());
     private String mProductName;
     private double mPricePerGr;
     private double mWeightPerVolumeUnit;
+    public Product(String pProductName, double pPricePerGr, double pWeightPerVolumeUnit) {
+        mProductName = pProductName;
+        mPricePerGr = pPricePerGr;
+        mWeightPerVolumeUnit = pWeightPerVolumeUnit;
+        log.fine(LogMessageConst.OBJ_CREATE);
+    }
+
+    public static Logger getLog() {
+        return log;
+    }
 
     public String getProductName() {
         return mProductName;
@@ -34,11 +49,5 @@ public class Product implements IProduct {
 
     public double getWeightPerVolumeUnit() {
         return mWeightPerVolumeUnit;
-    }
-
-    public Product(String pProductName, double pPricePerGr, double pWeightPerVolumeUnit) {
-        mProductName = pProductName;
-        mPricePerGr = pPricePerGr;
-        mWeightPerVolumeUnit = pWeightPerVolumeUnit;
     }
 }

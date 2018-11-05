@@ -1,4 +1,4 @@
-package com.dirsha.utils;
+package com.dirsha.tests;
 
 import com.dirsha.model.coffee.CoffeeInfo;
 import com.dirsha.model.coffee.CoffeePhysicalState;
@@ -6,7 +6,10 @@ import com.dirsha.model.coffee.CoffeeQuantity;
 import com.dirsha.model.coffee.PackagedCoffee;
 import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
 import com.dirsha.model.coffee.coffee_type.Coffee;
+import com.dirsha.utils.CoffeeFinder;
+import com.dirsha.utils.SearchOptionsConst;
 
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -64,7 +67,7 @@ public class CoffeeFinderTest {
                     .thenReturn(3000.0);
         }
 
-        assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), mPackagedCoffeeStockArrayList.size()-1);
+        Assert.assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), mPackagedCoffeeStockArrayList.size()-1);
         assertEquals((int)mPackagedCoffeeStockArrayList.get(mPackagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPrice(), 1000);
     }
 
