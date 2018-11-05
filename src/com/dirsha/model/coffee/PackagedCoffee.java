@@ -44,6 +44,10 @@ public class PackagedCoffee implements IPackagedCoffee {
         return mPrice;
     }
 
+    public double getPriceWeightQuality(){
+        return this.getProductWeight() / this.getPrice();
+    }
+
     public PackagedCoffee(Coffee pCoffee, Packaging pPackaging) {
         mCoffee = pCoffee;
         mPackaging = pPackaging;
@@ -53,6 +57,6 @@ public class PackagedCoffee implements IPackagedCoffee {
 
     @Override
     public String toString() {
-        return String.join(" ", mCoffee.toString(), mPackaging.toString(), String.valueOf(mPrice), String.valueOf(mPackaging.getVolume()));
+        return String.join(" ", mCoffee.toString(), mPackaging.toString(), String.valueOf(mPrice), String.valueOf(mPackaging.getVolume()), String.valueOf(getPriceWeightQuality()));
     }
 }

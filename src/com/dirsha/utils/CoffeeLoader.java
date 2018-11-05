@@ -19,9 +19,10 @@ import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
 import com.dirsha.model.van.Van;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * @author = Vadim Dirsha
@@ -29,7 +30,7 @@ import java.util.Random;
  */
 public class CoffeeLoader {
 
-    public static boolean load(Van pVan, double pOrderCoast, int pVanVolume, ArrayList<PackagedCoffee> pPackagedCoffeeArrayList) {
+    public static void load(Van pVan, double pOrderCoast, int pVanVolume, List<PackagedCoffee> pPackagedCoffeeArrayList) {
         ArrayList<PackagedCoffeeStock> packagedCoffeeStockArrayList = new ArrayList<>();
         int sizePackagedCoffee = pPackagedCoffeeArrayList.size();
         int tempVolume = 0;
@@ -41,16 +42,13 @@ public class CoffeeLoader {
             tempVolume += packagedCoffeeStockArrayList.get(packagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPackaging().getVolume();
             tempCoast += packagedCoffeeStockArrayList.get(packagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPrice();
         }
-        if(packagedCoffeeStockArrayList.size()!=0) {
+        if (!packagedCoffeeStockArrayList.isEmpty()) {
             packagedCoffeeStockArrayList.remove(packagedCoffeeStockArrayList.size() - 1);
-        }
 
-        while(packagedCoffeeStockArrayList.size()!=0) {
-            pVan.getCargo().add(new PackagedCoffeeStock(packagedCoffeeStockArrayList.get(0).getPackagedCoffee(),
-                    Collections.frequency(packagedCoffeeStockArrayList, packagedCoffeeStockArrayList.get(0))));
-            packagedCoffeeStockArrayList.remove(packagedCoffeeStockArrayList.get(0));
-        }
+            packagedCoffeeStockArrayList.stream().collect(Collectors.groupingBy(p -> p.getPackagedCoffee(), Collectors.counting()))
+                    .entrySet().stream()
+                    .forEach(key -> pVan.getCargo().add(new PackagedCoffeeStock(key.getKey(), key.getValue().intValue())));
 
-        return true;
+        }
     }
 }

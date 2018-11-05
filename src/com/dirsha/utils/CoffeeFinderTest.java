@@ -52,7 +52,8 @@ public class CoffeeFinderTest {
 //        mSpyPackagedCoffeeStock = spy(PackagedCoffeeStock.class);
 
         for (int i = 0; i < 10; i++) {
-            mPackagedCoffeeStockArrayList.add(mMockPackagedCoffeeStock);
+            mPackagedCoffeeStockArrayList.add(new PackagedCoffeeStock (mock(PackagedCoffee.class), i));
+
         }
     }
 
@@ -81,13 +82,40 @@ public class CoffeeFinderTest {
 
         searchOption.put(SearchOptionsConst.COFFE_PHYSICAL_STATE, CoffeePhysicalState.COFFEE_BEANS.name());
 
-        when(mPackagedCoffeeStockArrayList.get(mPackagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
+        for(PackagedCoffeeStock unit: mPackagedCoffeeStockArrayList){
+            when(unit.getPackagedCoffee().getCoffee()).thenReturn(mMockCoffee);
+            when(unit.getPackagedCoffee().getCoffee().getCoffeeInfo()).thenReturn(mMockCoffeeInfo);
+        }
+
+        when(mPackagedCoffeeStockArrayList.get(0).getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
                 .thenReturn(CoffeePhysicalState.COFFEE_BEANS);
-        for (int i = 0; i < mPackagedCoffeeStockArrayList.size() - 1; i++) {
+        for (int i = 1; i < mPackagedCoffeeStockArrayList.size(); i++) {
             when(mPackagedCoffeeStockArrayList.get(i).getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
                     .thenReturn(CoffeePhysicalState.INSTANT_COFFEE);
         }
 
         assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), 1);
+    }
+
+    @Test
+    public void findFunctionTestWitOneOptionArgument_QUANTITY() {
+
+        HashMap<String, String> searchOption = new HashMap<>();
+
+        searchOption.put(SearchOptionsConst.COFFEE_QUANTITY, CoffeeQuantity.BA.name());
+
+        for(PackagedCoffeeStock unit: mPackagedCoffeeStockArrayList){
+            when(unit.getPackagedCoffee().getCoffee()).thenReturn(mMockCoffee);
+            when(unit.getPackagedCoffee().getCoffee().getCoffeeInfo()).thenReturn(mMockCoffeeInfo);
+        }
+
+        when(mPackagedCoffeeStockArrayList.get(0).getPackagedCoffee().getCoffee().getCoffeeInfo().getQuantity())
+                .thenReturn(CoffeeQuantity.AA);
+        for (int i = 1; i < mPackagedCoffeeStockArrayList.size(); i++) {
+            when(mPackagedCoffeeStockArrayList.get(i).getPackagedCoffee().getCoffee().getCoffeeInfo().getQuantity())
+                    .thenReturn(CoffeeQuantity.BA);
+        }
+
+        assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), 9);
     }
 }
