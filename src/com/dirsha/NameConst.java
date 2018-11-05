@@ -18,26 +18,26 @@ package com.dirsha;
  @author = Vadim Dirsha
  @date = 03.11.2018
  */
-class NameConst {
-    static final String ARABICA = "Arabica";
-    static final String LIBERICA = "Liberica";
-    static final String ROBUSTA = "Robusta";
+public class NameConst {
+    public static final String ARABICA = "Arabica";
+    public static final String LIBERICA = "Liberica";
+    public static final String ROBUSTA = "Robusta";
 
-    static final String NESCAFE = "NESCAFE";
-    static final String NESCAFE_GOLD = "NESCAFE GOLD";
-    static final String NESCAFE_BARISTA = "NESCAFE BARISTA";
+    public static final String NESCAFE = "NESCAFE";
+    public static final String NESCAFE_GOLD = "NESCAFE GOLD";
+    public static final String NESCAFE_BARISTA = "NESCAFE BARISTA";
 
-    static final String JACOBS = "JACOBS";
-    static final String JACOBS_GOLD = "JACOBS GOLD";
-    static final String JACOBS_BARISTA = "JACOBS BARISTA";
+    public static final String JACOBS = "JACOBS";
+    public static final String JACOBS_GOLD = "JACOBS GOLD";
+    public static final String JACOBS_BARISTA = "JACOBS BARISTA";
 
-    static final String TCHIBO = "TCHIBO";
-    static final String TCHIBO_GOLD = "TCHIBO GOLD";
-    static final String TCHIBO_BARISTA = "TCHIBO BARISTA";
+    public static final String TCHIBO = "TCHIBO";
+    public static final String TCHIBO_GOLD = "TCHIBO GOLD";
+    public static final String TCHIBO_BARISTA = "TCHIBO BARISTA";
 
-    static final String MILK = "MILK";
-    static final String MILK_AND_SUGAR = "MILK AND SUGAR";
-    static final String SUGAR = "SUGAR";
+    public static final String MILK = "MILK";
+    public static final String MILK_AND_SUGAR = "MILK AND SUGAR";
+    public static final String SUGAR = "SUGAR";
 
     private NameConst(){
 

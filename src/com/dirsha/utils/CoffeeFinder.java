@@ -28,29 +28,29 @@ import java.util.stream.Collectors;
  */
 public class CoffeeFinder {
 
-    public static HashSet<PackagedCoffee> find(ArrayList<PackagedCoffeeStock> pPackagedCoffeeStockArrayList, HashMap<String, String> searchOption) {
-        HashSet<PackagedCoffee> foundCoffeeSet = new HashSet<>();
-        Set<PackagedCoffee> tempCoffeePriceSearchOptionSet = new HashSet<>();
+    public static List<PackagedCoffee> find(List<PackagedCoffeeStock> pPackagedCoffeeStockArrayList, Map<String, String> searchOption) {
+        ArrayList<PackagedCoffee> foundCoffeeSet = new ArrayList<>();
+        List<PackagedCoffee> tempCoffeePriceSearchOptionSet = new ArrayList<>();
         if (searchOption.containsKey(SearchOptionsConst.PRICE)) {
             tempCoffeePriceSearchOptionSet = pPackagedCoffeeStockArrayList.stream()
-                    .filter(unit -> Double.parseDouble(searchOption.get(SearchOptionsConst.PRICE)) < unit.getPackagedCoffee().getPrice())
-                    .map(unit -> unit.getPackagedCoffee())
-                    .collect(Collectors.toSet());
+                    .map(PackagedCoffeeStock::getPackagedCoffee)
+                    .filter(unit -> Double.parseDouble(searchOption.get(SearchOptionsConst.PRICE)) < unit.getPrice())
+                    .collect(Collectors.toList());
         }
         Set<PackagedCoffee> tempCoffeeQuantitySearchOptionSet = new HashSet<>();
         if (searchOption.containsKey(SearchOptionsConst.COFFEE_QUANTITY)) {
             tempCoffeePriceSearchOptionSet = pPackagedCoffeeStockArrayList.stream()
-                    .filter(unit -> CoffeeQuantity.valueOf(searchOption.get(SearchOptionsConst.COFFEE_QUANTITY)) == unit.getPackagedCoffee().getCoffee().getCoffeeInfo().getQuantity())
-                    .map(unit -> unit.getPackagedCoffee())
-                    .collect(Collectors.toSet());
+                    .map(PackagedCoffeeStock::getPackagedCoffee)
+                    .filter(unit -> CoffeeQuantity.valueOf(searchOption.get(SearchOptionsConst.COFFEE_QUANTITY)) == unit.getCoffee().getCoffeeInfo().getQuantity())
+                    .collect(Collectors.toList());
         }
 
         Set<PackagedCoffee> tempCoffeePhysicalStateSearchOptionSet = new HashSet<>();
         if (searchOption.containsKey(SearchOptionsConst.COFFE_PHYSICAL_STATE)) {
             tempCoffeePriceSearchOptionSet = pPackagedCoffeeStockArrayList.stream()
-                    .filter(unit -> CoffeePhysicalState.valueOf(searchOption.get(SearchOptionsConst.COFFE_PHYSICAL_STATE)) == unit.getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
-                    .map(unit -> unit.getPackagedCoffee())
-                    .collect(Collectors.toSet());
+                    .map(PackagedCoffeeStock::getPackagedCoffee)
+                    .filter(unit -> CoffeePhysicalState.valueOf(searchOption.get(SearchOptionsConst.COFFE_PHYSICAL_STATE)) == unit.getCoffee().getCoffeeInfo().getPhysicalState())
+                    .collect(Collectors.toList());
         }
 
         foundCoffeeSet.addAll(tempCoffeePhysicalStateSearchOptionSet);

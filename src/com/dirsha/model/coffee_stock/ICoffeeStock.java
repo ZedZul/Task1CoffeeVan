@@ -15,8 +15,9 @@
 package com.dirsha.model.coffee_stock;
 
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
 public interface ICoffeeStock {
+
 }

@@ -18,11 +18,12 @@ import com.dirsha.model.coffee.IPackagedCoffee;
 import com.dirsha.model.coffee.PackagedCoffee;
 
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
 public class PackagedCoffeeStock implements ICoffeeStock {
-    PackagedCoffee mPackagedCoffee;
+
+    private PackagedCoffee mPackagedCoffee;
     int mNumber;
 
     public PackagedCoffee getPackagedCoffee() {

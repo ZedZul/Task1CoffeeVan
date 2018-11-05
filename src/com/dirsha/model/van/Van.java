@@ -15,6 +15,7 @@
 package com.dirsha.model.van;
 
 import com.dirsha.model.coffee_stock.ICoffeeStock;
+import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
 
 import java.util.ArrayList;
 
@@ -25,7 +26,11 @@ import java.util.ArrayList;
 public class Van {
 
     private int mUsefulVolume;
-    private ArrayList<ICoffeeStock> mCargo;
+    private ArrayList<PackagedCoffeeStock> mCargo;
+
+    public ArrayList<PackagedCoffeeStock> getCargo() {
+        return mCargo;
+    }
 
     public int getUsefulVolume() {
         return mUsefulVolume;
@@ -37,5 +42,6 @@ public class Van {
 
     public Van(int pUsefulVolume) {
         mUsefulVolume = pUsefulVolume;
+        mCargo = new ArrayList<>();
     }
 }

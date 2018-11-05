@@ -19,6 +19,7 @@ import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
 import com.dirsha.model.van.Van;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Random;
 
@@ -40,7 +41,16 @@ public class CoffeeLoader {
             tempVolume += packagedCoffeeStockArrayList.get(packagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPackaging().getVolume();
             tempCoast += packagedCoffeeStockArrayList.get(packagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPrice();
         }
-        //TODO update implementation
-        return Boolean.FALSE;
+        if(packagedCoffeeStockArrayList.size()!=0) {
+            packagedCoffeeStockArrayList.remove(packagedCoffeeStockArrayList.size() - 1);
+        }
+
+        while(packagedCoffeeStockArrayList.size()!=0) {
+            pVan.getCargo().add(new PackagedCoffeeStock(packagedCoffeeStockArrayList.get(0).getPackagedCoffee(),
+                    Collections.frequency(packagedCoffeeStockArrayList, packagedCoffeeStockArrayList.get(0))));
+            packagedCoffeeStockArrayList.remove(packagedCoffeeStockArrayList.get(0));
+        }
+
+        return true;
     }
 }
