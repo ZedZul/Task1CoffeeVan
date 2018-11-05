@@ -15,13 +15,18 @@
 package com.dirsha.model.packaging;
 
 /**
- @author = Vadim Dirsha
- @date = 24.10.2018
+ * @author = Vadim Dirsha
+ * @date = 24.10.2018
  */
 public enum PackagingType {
-    GLASS(1,2), PAPER(0,1);
+    GLASS(1, 2), PAPER(0, 1);
     private int mVolumeModifier;
     private int mPriceModifier;
+
+    PackagingType(int pVolumeModifier, int pPriceModifier) {
+        mVolumeModifier = pVolumeModifier;
+        mPriceModifier = pPriceModifier;
+    }
 
     public int getPriceModifier() {
         return mPriceModifier;
@@ -29,10 +34,5 @@ public enum PackagingType {
 
     public int getVolumeModifier() {
         return mVolumeModifier;
-    }
-
-    PackagingType(int pVolumeModifier, int pPriceModifier){
-        mVolumeModifier = pVolumeModifier;
-        mPriceModifier = pPriceModifier;
     }
 }

@@ -15,7 +15,6 @@
 package com.dirsha.model.coffee.coffee_type;
 
 import com.dirsha.model.coffee.CoffeeInfo;
-import com.dirsha.model.coffee.Product;
 
 /**
  * @author = Vadim Dirsha
@@ -34,7 +33,7 @@ public class BlendedCoffee extends Coffee {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.join(" ", super.toString(), mSecondaryCoffeeInfo.toString());
     }
 }

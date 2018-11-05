@@ -15,7 +15,7 @@
 package com.dirsha.utils;
 
 import com.dirsha.model.coffee.PackagedCoffee;
-import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
+import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -59,13 +59,13 @@ public class CoffeeFinder {
         foundCoffeeSet.addAll(tempCoffeePriceSearchOptionSet);
         foundCoffeeSet.addAll(tempCoffeeQuantitySearchOptionSet);
 
-        if (searchOption.containsKey(SearchOptionsConst.PRICE)){
+        if (searchOption.containsKey(SearchOptionsConst.PRICE)) {
             foundCoffeeSet.retainAll(tempCoffeePriceSearchOptionSet);
         }
-        if (searchOption.containsKey(SearchOptionsConst.COFFE_PHYSICAL_STATE)){
+        if (searchOption.containsKey(SearchOptionsConst.COFFE_PHYSICAL_STATE)) {
             foundCoffeeSet.retainAll(tempCoffeePhysicalStateSearchOptionSet);
         }
-        if (searchOption.containsKey(SearchOptionsConst.COFFEE_QUANTITY)){
+        if (searchOption.containsKey(SearchOptionsConst.COFFEE_QUANTITY)) {
             foundCoffeeSet.retainAll(tempCoffeeQuantitySearchOptionSet);
         }
 

@@ -28,12 +28,12 @@ import com.dirsha.model.packaging.PackagingType;
 import java.util.ArrayList;
 
 /**
- @author = Vadim Dirsha
- @date = 05.11.2018
+ * @author = Vadim Dirsha
+ * @date = 05.11.2018
  */
 public class PrepareData {
 
-    public static ArrayList<PackagedCoffee> createPackagedCoffees(){
+    public static ArrayList<PackagedCoffee> createPackagedCoffees() {
         ArrayList<PackagedCoffee> packagedCoffees = new ArrayList<>();
 
         CoffeeInfo coffee1 = new CoffeeInfo(NameConst.ARABICA, CoffeePhysicalState.COFFEE_BEANS, CoffeeQuantity.AA);
@@ -71,15 +71,15 @@ public class PrepareData {
         coffees.add(product8);
         coffees.add(product9);
 
-        ArrayList<Packaging> packagings= new ArrayList<>();
-        for(PackagingSize size: PackagingSize.values()){
-            for(PackagingType type: PackagingType.values()){
-                packagings.add(new Packaging(type,size));
+        ArrayList<Packaging> packagings = new ArrayList<>();
+        for (PackagingSize size : PackagingSize.values()) {
+            for (PackagingType type : PackagingType.values()) {
+                packagings.add(new Packaging(type, size));
             }
         }
 
-        for(Coffee coffee: coffees){
-            for(Packaging packaging: packagings){
+        for (Coffee coffee : coffees) {
+            for (Packaging packaging : packagings) {
                 packagedCoffees.add(new PackagedCoffee(coffee, packaging));
             }
         }

@@ -19,4 +19,11 @@ package com.dirsha.model.packaging;
  @date = 22.10.2018
  */
 public interface IPackaging {
+    PackagingType getType();
+
+    PackagingSize getSize();
+
+    int getVolume();
+
+    int getPrice();
 }

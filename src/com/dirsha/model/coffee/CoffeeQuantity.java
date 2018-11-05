@@ -22,11 +22,11 @@ public enum CoffeeQuantity {
     AA(4), AB(3), BA(2), BB(1);
     private int mPricePerGr;
 
-    public int getPricePerGr() {
-        return mPricePerGr;
-    }
-
     CoffeeQuantity(int pPricePerGr) {
         mPricePerGr = pPricePerGr;
+    }
+
+    public int getPricePerGr() {
+        return mPricePerGr;
     }
 }

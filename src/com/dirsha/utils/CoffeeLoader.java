@@ -15,7 +15,7 @@
 package com.dirsha.utils;
 
 import com.dirsha.model.coffee.PackagedCoffee;
-import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
+import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
 import com.dirsha.model.van.Van;
 
 import java.util.ArrayList;

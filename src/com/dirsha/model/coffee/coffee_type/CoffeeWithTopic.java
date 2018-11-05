@@ -15,7 +15,6 @@
 package com.dirsha.model.coffee.coffee_type;
 
 import com.dirsha.model.coffee.CoffeeInfo;
-import com.dirsha.model.coffee.Product;
 
 /**
  * @author = Vadim Dirsha

@@ -12,24 +12,33 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
-package com.dirsha.utils;
+package com.dirsha.model.coffee.coffee_stock;
 
-import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
-
-import java.util.ArrayList;
+import com.dirsha.model.coffee.PackagedCoffee;
 
 /**
  * @author = Vadim Dirsha
  * @date = 22.10.2018
  */
-public class CoffeeSorter {
+public class PackagedCoffeeStock implements IPackagedCoffeeStock {
 
-    public static void sort(ArrayList<PackagedCoffeeStock> packagedCoffeeStockArrayList) {
-        packagedCoffeeStockArrayList.sort((s1, s2) -> {
-            Double t1 = s1.getPackagedCoffee().getPrice() / s1.getPackagedCoffee().getProductWeight();
-            Double t2 = s2.getPackagedCoffee().getPrice() / s2.getPackagedCoffee().getProductWeight();
-            return t1.compareTo(t2);
-        });
+    int mNumber;
+    private PackagedCoffee mPackagedCoffee;
 
+    public PackagedCoffeeStock(PackagedCoffee pPackagedCoffee, int pNumber) {
+        mPackagedCoffee = pPackagedCoffee;
+        mNumber = pNumber;
+    }
+
+    public PackagedCoffee getPackagedCoffee() {
+        return mPackagedCoffee;
+    }
+
+    public int getNumber() {
+        return mNumber;
+    }
+
+    public void setNumber(int mNumber) {
+        this.mNumber = mNumber;
     }
 }

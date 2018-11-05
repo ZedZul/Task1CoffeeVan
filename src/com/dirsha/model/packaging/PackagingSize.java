@@ -15,19 +15,19 @@
 package com.dirsha.model.packaging;
 
 /**
- @author = Vadim Dirsha
- @date = 24.10.2018
+ * @author = Vadim Dirsha
+ * @date = 24.10.2018
  */
 public enum PackagingSize {
     LARGE(3), MEDIUM(2), SMALL(1);
     private int mSize;
 
-    public int getSizeValue() {
-        return mSize;
+    PackagingSize(int pSize) {
+        mSize = pSize;
     }
 
-    PackagingSize(int pSize){
-        mSize = pSize;
+    public int getSizeValue() {
+        return mSize;
     }
 
 }

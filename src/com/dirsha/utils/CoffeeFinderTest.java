@@ -4,8 +4,8 @@ import com.dirsha.model.coffee.CoffeeInfo;
 import com.dirsha.model.coffee.CoffeePhysicalState;
 import com.dirsha.model.coffee.CoffeeQuantity;
 import com.dirsha.model.coffee.PackagedCoffee;
+import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
 import com.dirsha.model.coffee.coffee_type.Coffee;
-import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -13,16 +13,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.dirsha.NameConst;
-import com.dirsha.model.packaging.Packaging;
-import com.dirsha.model.packaging.PackagingSize;
-import com.dirsha.model.packaging.PackagingType;
-
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
-
-import static org.junit.Assert.*;
 
 /**
  * @author = Vadim Dirsha
@@ -52,7 +45,7 @@ public class CoffeeFinderTest {
 //        mSpyPackagedCoffeeStock = spy(PackagedCoffeeStock.class);
 
         for (int i = 0; i < 10; i++) {
-            mPackagedCoffeeStockArrayList.add(new PackagedCoffeeStock (mock(PackagedCoffee.class), i));
+            mPackagedCoffeeStockArrayList.add(new PackagedCoffeeStock(mock(PackagedCoffee.class), i));
 
         }
     }

@@ -14,7 +14,7 @@
  */
 package com.dirsha.model.van;
 
-import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
+import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
 
 import java.util.ArrayList;
 
@@ -33,10 +33,6 @@ public class Van {
 
     public int getUsefulVolume() {
         return mUsefulVolume;
-    }
-
-    public void setUsefulVolume(int pUsefulVolume) {
-        mUsefulVolume = pUsefulVolume;
     }
 
     public Van(int pUsefulVolume) {

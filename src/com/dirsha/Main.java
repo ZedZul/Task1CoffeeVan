@@ -1,26 +1,16 @@
 package com.dirsha;
 
-import com.dirsha.model.coffee.CoffeeInfo;
-import com.dirsha.model.coffee.CoffeePhysicalState;
 import com.dirsha.model.coffee.CoffeeQuantity;
 import com.dirsha.model.coffee.PackagedCoffee;
-import com.dirsha.model.coffee.coffee_type.BlendedCoffee;
-import com.dirsha.model.coffee.coffee_type.Coffee;
-import com.dirsha.model.coffee.coffee_type.CoffeeWithTopic;
-import com.dirsha.model.coffee_stock.PackagedCoffeeStock;
-import com.dirsha.model.packaging.Packaging;
-import com.dirsha.model.packaging.PackagingSize;
-import com.dirsha.model.packaging.PackagingType;
+import com.dirsha.model.coffee.coffee_stock.PackagedCoffeeStock;
 import com.dirsha.model.van.Van;
 import com.dirsha.utils.CoffeeFinder;
 import com.dirsha.utils.CoffeeLoader;
 import com.dirsha.utils.CoffeeSorter;
 import com.dirsha.utils.SearchOptionsConst;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -43,8 +33,8 @@ public class Main {
         Van van = new Van(500);
         CoffeeLoader.load(van, mOrderCost, mVanVolume, mPackagedCoffeeArrayList);
 
-        for(PackagedCoffeeStock packagedCoffeeStock: van.getCargo()) {
-            System.out.println(packagedCoffeeStock.getPackagedCoffee().toString() + " : " +packagedCoffeeStock.getNumber());
+        for (PackagedCoffeeStock packagedCoffeeStock : van.getCargo()) {
+            System.out.println(packagedCoffeeStock.getPackagedCoffee().toString() + " : " + packagedCoffeeStock.getNumber());
         }
         System.out.println();
         CoffeeSorter.sort(van.getCargo());

@@ -25,10 +25,6 @@ public class Coffee extends Product {
 
     public CoffeeInfo mCoffeeInfo;
 
-    public CoffeeInfo getCoffeeInfo() {
-        return mCoffeeInfo;
-    }
-
     public Coffee(String pProductName, CoffeeInfo pCoffeeInfo) {
         super(pProductName, pCoffeeInfo.pricePerGr(), pCoffeeInfo.weightPerVolumeUnit());
         this.mCoffeeInfo = pCoffeeInfo;
@@ -37,6 +33,10 @@ public class Coffee extends Product {
     public Coffee(String pProductName, double pPricePerGr, double pWeightPerVolumeUnit, CoffeeInfo pCoffeeInfo) {
         super(pProductName, pPricePerGr, pWeightPerVolumeUnit);
         this.mCoffeeInfo = pCoffeeInfo;
+    }
+
+    public CoffeeInfo getCoffeeInfo() {
+        return mCoffeeInfo;
     }
 
     @Override

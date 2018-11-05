@@ -15,10 +15,11 @@
 package com.dirsha;
 
 /**
- @author = Vadim Dirsha
- @date = 03.11.2018
+ * @author = Vadim Dirsha
+ * @date = 03.11.2018
  */
 public class NameConst {
+
     public static final String ARABICA = "Arabica";
     public static final String LIBERICA = "Liberica";
     public static final String ROBUSTA = "Robusta";
@@ -39,7 +40,7 @@ public class NameConst {
     public static final String MILK_AND_SUGAR = "MILK AND SUGAR";
     public static final String SUGAR = "SUGAR";
 
-    private NameConst(){
+    private NameConst() {
 
     }
 }

@@ -24,6 +24,12 @@ public class CoffeeInfo implements ICoffeeInfo {
     private CoffeePhysicalState mPhysicalState;
     private CoffeeQuantity mQuantity;
 
+    public CoffeeInfo(String pName, CoffeePhysicalState pPhysicalState, CoffeeQuantity pQuantity) {
+        mName = pName;
+        mPhysicalState = pPhysicalState;
+        mQuantity = pQuantity;
+    }
+
     public String getName() {
         return mName;
     }
@@ -34,12 +40,6 @@ public class CoffeeInfo implements ICoffeeInfo {
 
     public CoffeeQuantity getQuantity() {
         return mQuantity;
-    }
-
-    public CoffeeInfo(String pName, CoffeePhysicalState pPhysicalState, CoffeeQuantity pQuantity) {
-        mName = pName;
-        mPhysicalState = pPhysicalState;
-        mQuantity = pQuantity;
     }
 
     public double pricePerGr() {

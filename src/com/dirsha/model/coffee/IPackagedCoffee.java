@@ -15,8 +15,10 @@
 package com.dirsha.model.coffee;
 
 /**
- @author = Vadim Dirsha
- @date = 22.10.2018
+ * @author = Vadim Dirsha
+ * @date = 22.10.2018
  */
 public interface IPackagedCoffee {
+
+    double getPriceWeightQuality();
 }
