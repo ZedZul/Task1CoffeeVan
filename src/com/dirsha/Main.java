@@ -49,7 +49,7 @@ public class Main {
         map.put(SearchOptionsConst.PRICE, Double.toString(2500.0));
         map.put(SearchOptionsConst.COFFEE_QUANTITY, CoffeeQuantity.AB.name());
 
-        System.out.println("================ find coffee ================");
+        System.out.println("================ find coffee: cost > 2500, Quantity only AB ================");
         Set<PackagedCoffee> list = CoffeeFinder.find(van.getCargo(), map);
         for(PackagedCoffee packagedCoffee: list) {
             System.out.println(packagedCoffee.toString());

@@ -10,7 +10,7 @@ import com.dirsha.utils.CoffeeFinder;
 import com.dirsha.utils.SearchOptionsConst;
 
 import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -27,15 +27,17 @@ import static org.mockito.Mockito.when;
 
 public class CoffeeFinderTest {
 
-    static ArrayList<PackagedCoffeeStock> mPackagedCoffeeStockArrayList = new ArrayList<>();
+    static ArrayList<PackagedCoffeeStock> mPackagedCoffeeStockArrayList;
     static PackagedCoffeeStock mMockPackagedCoffeeStock;
     static PackagedCoffee mMockPackagedCoffee;
     static Coffee mMockCoffee;
     static CoffeeInfo mMockCoffeeInfo;
- //   static PackagedCoffeeStock mSpyPackagedCoffeeStock;
+    //   static PackagedCoffeeStock mSpyPackagedCoffeeStock;
 
-    @BeforeClass
-    public static void initializeTestClassFields() {
+    @Before
+    public void initializeTestClassFields() {
+        mPackagedCoffeeStockArrayList = new ArrayList<>();
+
         mMockPackagedCoffeeStock = mock(PackagedCoffeeStock.class);
         mMockPackagedCoffee = mock(PackagedCoffee.class);
         mMockCoffee = mock(Coffee.class);
@@ -51,6 +53,11 @@ public class CoffeeFinderTest {
             mPackagedCoffeeStockArrayList.add(new PackagedCoffeeStock(mock(PackagedCoffee.class), i));
 
         }
+
+        for (PackagedCoffeeStock unit : mPackagedCoffeeStockArrayList) {
+            when(unit.getPackagedCoffee().getCoffee()).thenReturn(mock(Coffee.class));
+            when(unit.getPackagedCoffee().getCoffee().getCoffeeInfo()).thenReturn(mock(CoffeeInfo.class));
+        }
     }
 
     @Test
@@ -62,13 +69,14 @@ public class CoffeeFinderTest {
 
         when(mPackagedCoffeeStockArrayList.get(mPackagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPrice())
                 .thenReturn(1000.0);
+
         for (int i = 0; i < mPackagedCoffeeStockArrayList.size() - 1; i++) {
-            when(mPackagedCoffeeStockArrayList.get(i).getPackagedCoffee().getPrice())
-                    .thenReturn(3000.0);
+            when(mPackagedCoffeeStockArrayList.get(i).getPackagedCoffee().getPrice()).thenReturn(3000.0);
+            ;
         }
 
-        Assert.assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), mPackagedCoffeeStockArrayList.size()-1);
-        assertEquals((int)mPackagedCoffeeStockArrayList.get(mPackagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPrice(), 1000);
+        Assert.assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), mPackagedCoffeeStockArrayList.size() - 1);
+        assertEquals((int) mPackagedCoffeeStockArrayList.get(mPackagedCoffeeStockArrayList.size() - 1).getPackagedCoffee().getPrice(), 1000);
     }
 
     @Test
@@ -78,17 +86,14 @@ public class CoffeeFinderTest {
 
         searchOption.put(SearchOptionsConst.COFFE_PHYSICAL_STATE, CoffeePhysicalState.COFFEE_BEANS.name());
 
-        for(PackagedCoffeeStock unit: mPackagedCoffeeStockArrayList){
-            when(unit.getPackagedCoffee().getCoffee()).thenReturn(mMockCoffee);
-            when(unit.getPackagedCoffee().getCoffee().getCoffeeInfo()).thenReturn(mMockCoffeeInfo);
-        }
 
-        when(mPackagedCoffeeStockArrayList.get(0).getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
-                .thenReturn(CoffeePhysicalState.COFFEE_BEANS);
+
         for (int i = 1; i < mPackagedCoffeeStockArrayList.size(); i++) {
             when(mPackagedCoffeeStockArrayList.get(i).getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
                     .thenReturn(CoffeePhysicalState.INSTANT_COFFEE);
         }
+        when(mPackagedCoffeeStockArrayList.get(0).getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
+                .thenReturn(CoffeePhysicalState.COFFEE_BEANS);
 
         assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), 1);
     }
@@ -100,11 +105,6 @@ public class CoffeeFinderTest {
 
         searchOption.put(SearchOptionsConst.COFFEE_QUANTITY, CoffeeQuantity.BA.name());
 
-        for(PackagedCoffeeStock unit: mPackagedCoffeeStockArrayList){
-            when(unit.getPackagedCoffee().getCoffee()).thenReturn(mMockCoffee);
-            when(unit.getPackagedCoffee().getCoffee().getCoffeeInfo()).thenReturn(mMockCoffeeInfo);
-        }
-
         when(mPackagedCoffeeStockArrayList.get(0).getPackagedCoffee().getCoffee().getCoffeeInfo().getQuantity())
                 .thenReturn(CoffeeQuantity.AA);
         for (int i = 1; i < mPackagedCoffeeStockArrayList.size(); i++) {
@@ -113,5 +113,31 @@ public class CoffeeFinderTest {
         }
 
         assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), 9);
+    }
+
+    @Test
+    public void findFunctionTestWitTцщOptionArgument_QUANTITY_AND_PHYSICAL_STATE() {
+
+        HashMap<String, String> searchOption = new HashMap<>();
+
+        searchOption.put(SearchOptionsConst.COFFEE_QUANTITY, CoffeeQuantity.BA.name());
+        searchOption.put(SearchOptionsConst.COFFE_PHYSICAL_STATE, CoffeePhysicalState.COFFEE_BEANS.name());
+
+
+        for (int i = 0; i < mPackagedCoffeeStockArrayList.size(); i++) {
+            when(mPackagedCoffeeStockArrayList.get(i).getPackagedCoffee().getCoffee().getCoffeeInfo().getQuantity())
+                    .thenReturn(CoffeeQuantity.AA);
+        }
+        when(mPackagedCoffeeStockArrayList.get(5).getPackagedCoffee().getCoffee().getCoffeeInfo().getQuantity())
+                .thenReturn(CoffeeQuantity.BA);
+
+        for (int i = 0; i < mPackagedCoffeeStockArrayList.size(); i++) {
+            when(mPackagedCoffeeStockArrayList.get(i).getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
+                    .thenReturn(CoffeePhysicalState.INSTANT_COFFEE);
+        }
+        when(mPackagedCoffeeStockArrayList.get(5).getPackagedCoffee().getCoffee().getCoffeeInfo().getPhysicalState())
+                .thenReturn(CoffeePhysicalState.COFFEE_BEANS);
+
+        assertEquals(CoffeeFinder.find(mPackagedCoffeeStockArrayList, searchOption).size(), 1);
     }
 }
